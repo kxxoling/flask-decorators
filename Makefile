@@ -2,6 +2,9 @@
 
 all: test
 
+test:
+	@python test_decorators.py
+
 clean: clean-pyc
 
 clean-pyc:
