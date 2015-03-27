@@ -17,7 +17,7 @@ def json_or_jsonp(func):
     return _
 
 
-def add_response_headers(headers={}):
+def add_response_headers(headers):
     """Add headers passed in to the response
 
     Usage:
