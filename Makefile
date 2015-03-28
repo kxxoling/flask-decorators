@@ -27,5 +27,6 @@ install:
 
 release: test
 	@python setup.py register -r pypi
+	@python setup.py sdist upload -r pypi
 
 .PHONY: release clean clean-pyc develop install clean-build
