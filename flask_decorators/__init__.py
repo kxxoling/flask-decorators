@@ -4,7 +4,7 @@ from flask import request, current_app, make_response, Response
 
 def json_or_jsonp(func):
     """Wrap response in JSON or JSONP style"""
-    @warps(func)
+    @wraps(func)
     def _(*args, **kwargs):
         mimetype = 'application/javascript'
         callback = request.args.get('callback', None)
@@ -44,8 +44,8 @@ def add_response_headers(headers):
 
 
 def gen(mimetype):
-    """``gen`` is a decorator factory function, you just need to confirm a mimetype
-    before using::
+    """``gen`` is a decorator factory function, you just need to set
+    a mimetype before using::
 
         @app.route('/')
         @gen('')
