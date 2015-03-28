@@ -1,5 +1,5 @@
 from functools import wraps
-from flask import request, current_app, make_response
+from flask import request, current_app, make_response, Response
 
 
 def json_or_jsonp(func):
@@ -41,3 +41,24 @@ def add_response_headers(headers):
             return rsp
         return _
     return decorator
+
+
+def gen(mimetype):
+    """``gen`` is a decorator factory function, you just need to confirm a mimetype
+    before using::
+
+        @app.route('/')
+        @gen('')
+        def index():
+            pass
+
+    A full demo for creating a image stream is available on
+    `GitHub <https://github.com/kxxoling/flask-video-streaming>`__ .
+    """
+    def streaming(func, *args, **kwargs):
+        @wraps(func)
+        def _():
+            return Response(func(*args, **kwargs),
+                            mimetype=mimetype)
+        return _
+    return streaming
