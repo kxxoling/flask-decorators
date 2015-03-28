@@ -12,7 +12,7 @@ from setuptools import setup
 
 setup(
     name='Flask-Decorators',
-    version='0.0.0',
+    version='0.0.1',
     url='https://github.com/kxxoling/flask-decorators',
     license='MIT',
     author='Kane Blueriver',

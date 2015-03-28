@@ -25,4 +25,7 @@ develop:
 install:
 	@python setup.py install
 
+release: test
+	@python setup.py register -r pypi
+
 .PHONY: release clean clean-pyc develop install clean-build
