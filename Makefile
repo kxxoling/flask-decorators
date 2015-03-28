@@ -5,7 +5,12 @@ all: test
 test:
 	@python test_decorators.py
 
-clean: clean-pyc
+clean: clean-pyc clean-build
+
+clean-build:
+	@rm -rf build
+	@rm -rf dist
+	@rm -rf Flask_Decorators.egg-info
 
 clean-pyc:
 	@find . -name '*.pyc' -exec rm {} \;
@@ -17,4 +22,7 @@ make-docs:
 develop:
 	@pip install --editable .
 
-.PHONY: test release all clean clean-pyc develop
+install:
+	@python setup.py install
+
+.PHONY: release clean clean-pyc develop install clean-build
