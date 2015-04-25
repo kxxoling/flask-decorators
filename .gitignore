@@ -7,11 +7,10 @@
 .idea
 Icon?
 Thumbs.db
-ehthumbs.db
 
 _book
 _site
 _build
-Flask_Decorators.egg-info/
+*.egg-info/
 build/
 dist/

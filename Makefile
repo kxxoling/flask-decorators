@@ -3,14 +3,14 @@
 all: test
 
 test:
-	@python test_decorators.py
+	@python test_*.py
 
 clean: clean-pyc clean-build
 
 clean-build:
 	@rm -rf build
 	@rm -rf dist
-	@rm -rf Flask_Decorators.egg-info
+	@rm -rf *.egg-info
 
 clean-pyc:
 	@find . -name '*.pyc' -exec rm {} \;
